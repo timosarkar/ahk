@@ -5,7 +5,8 @@ from qiskit.compiler import transpile
 import json
 
 # load all mapped possible program outputs into memory
-outputs = json.load("outputs.json")
+with open("outputs.json", "r") as file:
+  outputs = json.load(file)
 
 # load QASM code from file
 qc = QuantumCircuit.from_qasm_file("file.qasm")
