@@ -5,5 +5,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends build-essential
 RUN pip install --no-cache-dir qiskit qiskit-aer
 WORKDIR /usr/src/app
 COPY main.py .
+COPY outputs.json .
 COPY file.qasm .
 CMD ["/bin/bash"]
